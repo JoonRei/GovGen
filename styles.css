@@ -34,20 +34,7 @@ body::-webkit-scrollbar {
     z-index: 1000;
 }
 
-.navbar.hidden {
-    top: -80px; 
-}
-
-.navbar.scrolled {
-    background: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(15px);
-}
-
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-}
-
+/* Navigation Links */
 .nav-links {
     list-style: none;
     display: flex;
@@ -70,14 +57,42 @@ body::-webkit-scrollbar {
     background: rgba(255, 255, 255, 0.2);
 }
 
-/* Mobile Menu */
+/* Mobile Menu Button */
 .menu-toggle {
     display: none;
-    font-size: 24px;
+    font-size: 26px;
     background: none;
     border: none;
     color: #fff;
     cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        text-align: center;
+        padding: 15px 0;
+        display: none; /* Initially hidden */
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
 }
 
 /* Hero Section */
